@@ -16,5 +16,5 @@ import lombok.NoArgsConstructor;
 public class Cash {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Double Cashtendered;
+    private Double OffreEspece;
 }

@@ -16,6 +16,6 @@ import lombok.NoArgsConstructor;
 public class Cheque {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private String nomdebanque;
+    private String nom;
     private String bankId;
 }

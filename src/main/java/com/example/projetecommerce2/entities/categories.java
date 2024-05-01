@@ -17,7 +17,6 @@ import lombok.NoArgsConstructor;
 public class categories {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
-    private String categories;
+    private Long idcat;
     private String descriptions;
 }

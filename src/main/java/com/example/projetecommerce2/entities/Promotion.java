@@ -19,8 +19,8 @@ public class Promotion {
     private Date date_debut;
     private Date date_Fin;
     private int Codepromos;
-    @OneToMany(mappedBy = "category",fetch = FetchType.)
     private Boolean status;
+
 
 }
 

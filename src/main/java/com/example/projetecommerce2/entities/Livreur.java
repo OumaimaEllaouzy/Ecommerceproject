@@ -18,5 +18,6 @@ public class Livreur {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private String nom;
     private String prenom;
+    private Double num;
 
 }
