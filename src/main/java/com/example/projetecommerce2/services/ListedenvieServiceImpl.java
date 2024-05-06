@@ -33,10 +33,6 @@ public class ListedenvieServiceImpl implements ListedenvieService{
         return null;
     }
 
-    @Override
-    public Listedenvie saveListedenvie() {
-
-    }
 
     @Override
     public void deleteListedenvieById(Long id) {

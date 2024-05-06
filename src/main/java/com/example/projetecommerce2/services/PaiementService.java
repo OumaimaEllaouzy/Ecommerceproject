@@ -18,7 +18,5 @@ public interface PaiementService {
     Paiement getPaiementById(Long id);
     List<Paiement> getAllPaiement();
 
-    List<Paiement> getAllCPaiement();
-
     List<Client> getAllCPaiements();
 }

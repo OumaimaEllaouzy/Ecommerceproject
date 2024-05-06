@@ -6,7 +6,8 @@ import org.springframework.stereotype.Service;
 
 import java.util.List;
 @Service
-public class CompteServiceImpl {
+public class CompteServiceImpl implements CompteService
+{
 
     private CompteRepository compteRepository;
 
@@ -21,8 +22,8 @@ public class CompteServiceImpl {
     }
 
     @Override
-    public Compte updateCompte(Compte compte) {
-        return compteRepository.save(compte);
+    public Compte updateCommande(Compte compte) {
+        return null;
     }
 
     @Override
@@ -35,8 +36,18 @@ public class CompteServiceImpl {
     }
 
     @Override
+    public void deleteAllCompte() {
+
+    }
+
+    @Override
     public void deleteAllComptes() {
         compteRepository.deleteAll();
+    }
+
+    @Override
+    public Compte getById(Long id) {
+        return null;
     }
 
     @Override
@@ -45,9 +56,10 @@ public class CompteServiceImpl {
     }
 
     @Override
-    public List<Compte> getAllCompte) {
+    public List<Compte> getAllCompte() {
         return null;
     }
+
 
     @Override
     public List<Compte> getAllComptes() {

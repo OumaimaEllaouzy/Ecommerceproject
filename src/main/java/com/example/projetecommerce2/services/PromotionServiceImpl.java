@@ -7,7 +7,8 @@ import org.springframework.stereotype.Service;
 
 import java.util.List;
 @Service
-public class PromotionServiceImpl {
+public class PromotionServiceImpl implements PromotionService
+{
 
     private PromotionRepository promotionRepository;
 
@@ -32,20 +33,20 @@ public class PromotionServiceImpl {
     public void deletePromotionById(Long id) {
         promotionRepository.deleteById(id);   }
 
+    @Override
+    public void deleteAllPromotions() {
+        
+    }
 
     @Override
-    public void deleteAllPromotion () {
-        promotionRepository.deleteAll();
+    public Promotion getPromotiontById(Long id) {
+        return null;
     }
 
     @Override
-    public Promotion  getPromotionById(Long id) {
-        return promotionRepository.findById(id).get();
+    public List<Promotion> getAllPromotions() {
+        return null;
     }
 
 
-     @Override
-    public List<Promotion > getAllpromotions() {
-        return promotionRepository.findAll();
-    }
 }

@@ -40,17 +40,6 @@ public class CategorieServiceimpl implements CategorieService{
     public void deleteCategorie() {
 
     }
-
-    @Override
-    public void deleteAllCategorie() {
-
-    }
-
-    @Override
-    public Categorie getCategorieById(Long id) {
-        return null;
-    }
-
     @Override
     public void deleteAllCategorie() {
         categorieRepository.deleteAll();

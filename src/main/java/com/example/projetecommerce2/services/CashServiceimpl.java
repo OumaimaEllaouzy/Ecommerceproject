@@ -18,7 +18,7 @@ public class CashServiceimpl implements CashService {
     }
 
     @Override
-    public Cash saveCash(Cash Cash) {
+    public Cash saveCash(Cash cash) {
         return cashRepository.save(cash);
     }
 

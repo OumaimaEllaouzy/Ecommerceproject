@@ -9,55 +9,48 @@ import java.util.List;
 @Service
 public class ChequeSeriveImpl implements ChequeService {
 
-    private ChequeRepository clientRepository;
+    private ChequeRepository chequetRepository;
 
     @Autowired
     public void ChequeServiceimpl (ChequeRepository chequeRepository) {
-        this.chequetRepository = clientRepository;
+        this.chequetRepository = chequetRepository;
     }
 
     @Override
     public Cheque saveCheque(Cheque cheque) {
-        return chequeRepository.save(cheque);
+        return chequetRepository.save(cheque);
     }
 
     @Override
     public Cheque updateCheque(Cheque cheque) {
-        return chequeRepository.save(cheque);
+        return chequetRepository.save(cheque);
     }
 
     @Override
     public void deleteChequeById(Long id) {
-        ChequeRepository.deleteById(id);   }
+        chequetRepository.deleteById(id);   }
 
     @Override
     public void deleteCheque() {
 
     }
 
-    @Override
-    public void deleteCheque) {
 
-    }
 
     @Override
     public void deleteAllCheque() {
-        chequeRepository.deleteAll();
+        chequetRepository.deleteAll();
     }
 
     @Override
     public Cheque getChequeById(Long id) {
-        return chequeRepository.findById(id).get();
+        return chequetRepository.findById(id).get();
     }
 
-    @Override
-    public List<Cheque> getAllCheque) {
-        return null;
-    }
 
     @Override
     public List<Cheque> getAllCheque() {
-        return chequeRepository.findAll();
+        return chequetRepository.findAll();
     }
 
     @Override

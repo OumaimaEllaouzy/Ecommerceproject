@@ -13,7 +13,7 @@ public class LivreurServiceImpl implements LivreurService{
     private LivreurRepository livreurRepository;
 
     @Autowired
-    public LivreurServiceImpl (LivreurRepository paiementRepository) {
+    public LivreurServiceImpl (LivreurRepository livreurRepository) {
         this.livreurRepository = livreurRepository;
     }
 
@@ -45,19 +45,10 @@ public class LivreurServiceImpl implements LivreurService{
     }
 
     @Override
-    public List<Livreur> getAllLivreur() {
-        return null;
-    }
-
-    @Override
     public List<Livreur> getAllLivreurs() {
         return null;
     }
 
-    @Override
-    public void deleteAllLivreur() {
-
-    }
 
     @Override
     public void deleteLivreur() {
@@ -76,23 +67,9 @@ public class LivreurServiceImpl implements LivreurService{
     }
 
     @Override
-    public Livreur getLivreur0ById(Long id) {
-        return livreurRepository.findById(id).get();
-    }
-
-
-    @Override
     public List<Livreur> getAllLivreur() {
         return livreurRepository.findAll();
     }
 
-    @Override
-    public List<Livreur> getAllLivreur(() {
-        return null;
-    }
 
-    @Override
-    public List<Livreur> getAllLivreur() {
-        return null;
     }
-}

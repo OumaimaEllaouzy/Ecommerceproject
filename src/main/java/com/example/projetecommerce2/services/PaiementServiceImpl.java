@@ -1,4 +1,5 @@
 package com.example.projetecommerce2.services;
+import com.example.projetecommerce2.entities.Client;
 import com.example.projetecommerce2.entities.Paiement;
 import com.example.projetecommerce2.repositories.PaiementRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -56,11 +57,6 @@ public class PaiementServiceImpl implements PaiementService{
     @Override
     public List<Paiement> getAllPaiement() {
         return paiementRepository.findAll();
-    }
-
-    @Override
-    public List<Paiement> getAllCPaiement() {
-        return null;
     }
 
     @Override

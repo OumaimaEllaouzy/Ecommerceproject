@@ -9,8 +9,6 @@ import java.util.List;
 public interface ListedenvieService {
     Listedenvie save(Listedenvie listedenvie);
 
-    Listedenvie saveListedenvie(listedenvie);
-
     Listedenvie saveListedenvie(Listedenvie listedenvie);
 
     Listedenvie updateListedenvie(Listedenvie listedenvie);

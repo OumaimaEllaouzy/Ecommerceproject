@@ -12,29 +12,23 @@ public class CommandeServiceImpl implements CommandeService {
 
     @Autowired
     public CommandeServiceImpl (CommandeRepository commandeRepository) {
-        this.commandeRepository = commandeRepository;
+        this.commandeSRepository = commandeRepository;
     }
 
     @Override
     public Commande saveCommande(Commande commande) {
-        return CommandeRepository.save(commande);
+        return commandeSRepository.save(commande);
     }
 
     @Override
     public Commande updateCommande(Commande commande) {
-        return null;
-    }
-
-
-    @Override
-    public Commande updateCommande(Commande commande) {
-        return commandeRepository.save(commande);
+        return commandeSRepository.save(commande);
     }
 
 
     @Override
     public void deleteCommandeById(Long id) {
-        commandeRepository.deleteById(id);   }
+        commandeSRepository.deleteById(id);   }
 
     @Override
     public void deleteCommande() {
@@ -59,17 +53,17 @@ public class CommandeServiceImpl implements CommandeService {
 
     @Override
     public void deleteAllCommandes() {
-        commandeRepository.deleteAll();
+        commandeSRepository.deleteAll();
     }
 
     @Override
     public Commande getById(Long id) {
-        return commandeRepository.findById(id).get();
+        return commandeSRepository.getById(id);
     }
 
 
     @Override
     public List<Commande> getAllCommandes() {
-        return commandeRepository.findAll();
+        return commandeSRepository.findAll();
     }
 }
