@@ -1,7 +1,7 @@
 package com.example.projetecommerce2.controllers;
 import com.example.projetecommerce2.entities.Client;
-import com.example.projetecommerce2.services.ClientService;
 import com.example.projetecommerce2.services.ClientServiceimp;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -9,7 +9,8 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/api/clients")
-public class ClientController {
+public class
+ClientController {
     @Autowired
     private ClientServiceimp clientService;
 
@@ -28,7 +29,7 @@ public class ClientController {
     }
     @PutMapping("/update/{id}")
     public Client update(@PathVariable Long id, @RequestBody Client updatedClient) {
-        return clientService.updateClient(updatedClient);
+        return  clientService.updateClient(id, updatedClient);
     }
     @DeleteMapping("/delete/{id}")
     public String delete(@PathVariable Long id) {

@@ -22,5 +22,10 @@ public class Produit {
     private String descriptions;
     private String reference;
     private Long idcat;
+    @ManyToOne
+    private Categorie categorie;
+    @ManyToOne
+    private Promotion promotion;
+
 
 }

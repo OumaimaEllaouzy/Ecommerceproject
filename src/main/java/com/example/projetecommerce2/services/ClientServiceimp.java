@@ -22,7 +22,7 @@ public class ClientServiceimp implements ClientService{
     }
 
     @Override
-    public Client updateClient(Client client) {
+    public Client updateClient(Long id, Client client) {
         return clientRepository.save(client);
     }
 
