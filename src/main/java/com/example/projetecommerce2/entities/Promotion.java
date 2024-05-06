@@ -6,6 +6,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import java.util.Date;
+import java.util.List;
 
 @Entity
 @Data
@@ -20,7 +21,8 @@ public class Promotion {
     private Date date_Fin;
     private int Codepromos;
     private Boolean status;
-
-
+    @OneToMany(mappedBy ="Promotion" )
+    private List<Produit> Produits;
 }
+
 

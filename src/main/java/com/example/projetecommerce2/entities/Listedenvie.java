@@ -5,6 +5,9 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.util.ArrayList;
+import java.util.List;
+
 @Entity
 @Data
 @AllArgsConstructor
@@ -14,5 +17,13 @@ public class Listedenvie
 { @Id
 @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
+    @ManyToMany
+    @JoinTable(
+            name ="Listedenvie_commandes",
+            joinColumns = @JoinColumn(name="Listedenvie_id"),
+            inverseJoinColumns = @JoinColumn(name = "produit_id")
+    )
+            private List<Produit> produits=new ArrayList<>();
+
 }
 

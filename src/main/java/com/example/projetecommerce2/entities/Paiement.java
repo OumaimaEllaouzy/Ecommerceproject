@@ -1,8 +1,5 @@
 package com.example.projetecommerce2.entities;
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -21,4 +18,7 @@ public class Paiement {
     private Long id;
     private Double montant;
     private Date datedepaiement;
+    @OneToOne
+    @JoinColumn(name = "Commande_id",referencedColumnName ="id")
+    private Commande commande;
 }
