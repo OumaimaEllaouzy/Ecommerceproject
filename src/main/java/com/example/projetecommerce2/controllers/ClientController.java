@@ -1,8 +1,7 @@
-package com.example.salesmaster.Controllers;
-
-
-import com.example.salesmaster.entities.Client;
-import com.example.salesmaster.services.ClientService;
+package com.example.projetecommerce2.controllers;
+import com.example.projetecommerce2.entities.Client;
+import com.example.projetecommerce2.services.ClientService;
+import com.example.projetecommerce2.services.ClientServiceimp;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -12,7 +11,7 @@ import java.util.List;
 @RequestMapping("/api/clients")
 public class ClientController {
     @Autowired
-    private ClientService clientService;
+    private ClientServiceimp clientService;
 
     @PostMapping()
     public String add(@RequestBody Client client){
@@ -21,7 +20,7 @@ public class ClientController {
     }
     @GetMapping
     public List<Client> getAllClients(){
-        return clientService.getAllClient();
+        return clientService.getAllClients();
     }
     @GetMapping("/get/{id}")
     public Client getClientById(@PathVariable Long id) {
@@ -29,11 +28,11 @@ public class ClientController {
     }
     @PutMapping("/update/{id}")
     public Client update(@PathVariable Long id, @RequestBody Client updatedClient) {
-        return clientService.updateClient(id, updatedClient);
+        return clientService.updateClient(updatedClient);
     }
     @DeleteMapping("/delete/{id}")
     public String delete(@PathVariable Long id) {
-        clientService.deleteClientById(id);
+        clientService.getClientById(id);
         return "Client deleted successfully";
     }
 }

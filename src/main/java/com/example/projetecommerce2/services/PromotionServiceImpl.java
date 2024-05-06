@@ -35,7 +35,7 @@ public class PromotionServiceImpl implements PromotionService
 
     @Override
     public void deleteAllPromotions() {
-        
+
     }
 
     @Override
