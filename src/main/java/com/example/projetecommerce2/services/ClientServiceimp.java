@@ -2,29 +2,33 @@ package com.example.projetecommerce2.services;
 
 import com.example.projetecommerce2.entities.Client;
 import com.example.projetecommerce2.repositories.ClientRepository;
-import lombok.AllArgsConstructor;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
 import java.util.List;
-@Service
-@AllArgsConstructor
 
-public class ClientServiceImpl implements ClientService {
+@Service
+public class ClientServiceimp implements ClientService{
+
     private ClientRepository clientRepository;
+
+    @Autowired
+    public ClientServiceimp(ClientRepository clientRepository) {
+        this.clientRepository = clientRepository;
+    }
+
     @Override
     public Client saveClient(Client client) {
-        return null;
+        return clientRepository.save(client);
     }
 
     @Override
     public Client updateClient(Client client) {
-        return null;
+        return clientRepository.save(client);
     }
 
     @Override
     public void deleteClientById(Long id) {
-
-    }
+        clientRepository.deleteById(id);   }
 
     @Override
     public void deleteClient() {
@@ -32,12 +36,22 @@ public class ClientServiceImpl implements ClientService {
     }
 
     @Override
+    public void deleteAllClients() {
+        clientRepository.deleteAll();
+    }
+
+    @Override
     public Client getClientById(Long id) {
-        return null;
+        return clientRepository.findById(id).get();
     }
 
     @Override
     public List<Client> getAllClient() {
         return null;
+    }
+
+    @Override
+    public List<Client> getAllClients() {
+        return clientRepository.findAll();
     }
 }

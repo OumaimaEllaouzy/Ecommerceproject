@@ -5,6 +5,8 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.util.List;
+
 @Entity
 @Data
 @AllArgsConstructor
@@ -18,6 +20,7 @@ public class Client {
     private String prenom;
     private String email;
     private String adresse;
-    @ManyToOne
-    private Compte compte;
+
+    @OneToMany(mappedBy ="client" )
+    private List<Commande> commandes;
 }

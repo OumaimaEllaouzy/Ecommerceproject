@@ -1,14 +1,13 @@
 package com.example.projetecommerce2.entities;
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 
 @Entity
 @Data
@@ -21,4 +20,14 @@ public class Commande {
     private Date datedecommande;
     private int idcom;
     private float total;
+    @ManyToOne
+    private Client client;
+    @ManyToMany
+    @JoinTable(
+            name ="produit_commandes",
+            joinColumns = @JoinColumn(name="commande_id"),
+            inverseJoinColumns = @JoinColumn(name = "produit_id")
+    )
+    private List<Produit> produits=new ArrayList<>();
+
 }

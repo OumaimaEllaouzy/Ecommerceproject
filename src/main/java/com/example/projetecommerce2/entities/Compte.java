@@ -20,7 +20,11 @@ public class Compte {
     private Date date_creation;
     private String mot_de_passe;
     private String login;
-    @OneToMany(mappedBy = "compte", cascade = CascadeType.ALL)
-    private List<Client> clients = new ArrayList<>();
+    @OneToOne
+    @JoinColumn(name = "client_id",referencedColumnName ="id")
+    private Client client;
+    @OneToOne
+    @JoinColumn(name = "Listedenvie_id",referencedColumnName ="id")
+    private Listedenvie listedenvie;
 
 }
